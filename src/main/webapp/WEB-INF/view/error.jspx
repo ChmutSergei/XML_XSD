@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      version="2.0">
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <![CDATA[
+    <meta charset="utf-8">
+    <meta nameNews="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assest/css/bootstrap.min.css">
+    <script src="${pageContext.request.contextPath}/assest/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  ]]>
+    <style>
+        .button-try {
+            text-align: center;
+        }
+        #message{
+            margin-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            float: none;
+        }
+    </style>
+    <title>ERROR</title>
+</head>
+<body>
+<div class="container col-xs-12" style="background-color:#e6f7d9;height: 800px;margin-top: -20px">
+    <c:if test="${not empty sessionScope.message}">
+        <div id="message" class="alert alert-danger col-xs-6 center-block">
+            <strong>${sessionScope.message}</strong>
+        </div>
+    </c:if>
+    <div class="button-try" >
+        <a href="${pageContext.request.contextPath}/frontController?command=home&amp;error=true"
+           class="btn btn-primary" role="button">Try again</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:papers xmlns:ns="http://chmut.by/papers"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <publication type="newspaper" id="n1258" monthly="yes">
+        <title>Вечерний Минск</title>
+        <date>2019-01-17</date>
+        <chars xsi:type="ns:Newspaper-chars" glossy="no" index="223070">
+            <color>false</color>
+            <size>10</size>
+        </chars>
+    </publication>
+    <publication type="magazine" id="n412" monthly="no">
+        <title>Men's Health</title>
+        <date>2017-02-17</date>
+        <chars xsi:type="ns:Magazine-chars" glossy="yes" index="223040">
+            <color>true</color>
+            <size>56</size>
+        </chars>
+    </publication>
+    <publication type="booklet" id="n871" monthly="no">
+        <title>How to get good Grades</title>
+        <date>2017-02-17</date>
+        <chars xsi:type="ns:Booklet-chars" glossy="yes">
+            <color>true</color>
+            <size>6</size>
+        </chars>
+    </publication>
+    <publication type="newspaper" id="n78" monthly="no">
+        <title>Московский комсомолец</title>
+        <date>2018-12-30</date>
+        <chars xsi:type="ns:Newspaper-chars" glossy="no" index="123450">
+            <color>true</color>
+            <size>15</size>
+        </chars>
+    </publication>
+    <publication type="magazine" id="n1245" monthly="yes">
+        <title>Maxim</title>
+        <date>2017-05-01</date>
+        <chars xsi:type="ns:Magazine-chars" glossy="yes" index="255540">
+            <color>true</color>
+            <size>85</size>
+        </chars>
+    </publication>
+    <publication type="booklet" id="n002" monthly="no">
+        <title>Future Marketing</title>
+        <date>2018-04-04</date>
+        <chars xsi:type="ns:Booklet-chars" glossy="yes">
+            <color>true</color>
+            <size>8</size>
+        </chars>
+    </publication>
+    <publication type="newspaper" id="n124" monthly="yes">
+        <title>Комсомольская правда</title>
+        <date>2018-06-01</date>
+        <chars xsi:type="ns:Newspaper-chars" glossy="no" index="45522">
+            <color>false</color>
+            <size>12</size>
+        </chars>
+    </publication>
+    <publication type="magazine" id="n441" monthly="yes">
+        <title>The Hacker News</title>
+        <date>2018-11-10</date>
+        <chars xsi:type="ns:Magazine-chars" glossy="yes" index="43040">
+            <color>true</color>
+            <size>42</size>
+        </chars>
+    </publication>
+    <publication type="booklet" id="n0102" monthly="no">
+        <title>New Fashion</title>
+        <date>2016-03-09</date>
+        <chars xsi:type="ns:Booklet-chars" glossy="yes">
+            <color>true</color>
+            <size>10</size>
+        </chars>
+    </publication>
+    <publication type="newspaper" id="n616" monthly="yes">
+        <title>New-York Times</title>
+        <date>2018-02-25</date>
+        <chars xsi:type="ns:Newspaper-chars" glossy="no" index="15150">
+            <color>false</color>
+            <size>18</size>
+        </chars>
+    </publication>
+    <publication type="magazine" id="n6165" monthly="yes">
+        <title>National Geographic</title>
+        <date>2019-01-10</date>
+        <chars xsi:type="ns:Magazine-chars" glossy="yes" index="12345">
+            <color>true</color>
+            <size>92</size>
+        </chars>
+    </publication>
+    <publication type="booklet" id="n4565" monthly="yes">
+        <title>How do I make money?</title>
+        <date>2018-06-01</date>
+        <chars xsi:type="ns:Booklet-chars" glossy="yes">
+            <color>true</color>
+            <size>4</size>
+        </chars>
+    </publication>
+    <publication type="newspaper" id="n4568" monthly="no">
+        <title>Музыкальная газета</title>
+        <date>2018-08-01</date>
+        <chars xsi:type="ns:Newspaper-chars" glossy="no" index="45122">
+            <color>false</color>
+            <size>10</size>
+        </chars>
+    </publication>
+    <publication type="magazine" id="n1345" monthly="yes">
+        <title>Rolling Stone</title>
+        <date>2018-04-04</date>
+        <chars xsi:type="ns:Magazine-chars" glossy="yes" index="123245">
+            <color>true</color>
+            <size>72</size>
+        </chars>
+    </publication>
+    <publication type="booklet" id="n4561" monthly="no">
+        <title>Some awesome booklet</title>
+        <date>2019-01-01</date>
+        <chars xsi:type="ns:Booklet-chars" glossy="yes">
+            <color>true</color>
+            <size>1</size>
+        </chars>
+    </publication>
+</ns:papers>

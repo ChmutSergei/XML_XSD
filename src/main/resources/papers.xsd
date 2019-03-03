@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://chmut.by/papers"
+        xmlns:tns="http://chmut.by/papers">
+    <element name="papers">
+        <complexType>
+            <sequence>
+                <element name="publication" type="tns:Publication" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Publication">
+        <sequence>
+            <element name="title">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[A-ZА-Я][\w\W]{2,35}"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="date" type="date"/>
+            <element name="chars" type="tns:Chars"/>
+        </sequence>
+        <attribute name="type" use="optional" default="newspaper">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="newspaper"/>
+                    <enumeration value="magazine"/>
+                    <enumeration value="booklet"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="id" use="required">
+            <simpleType>
+                <restriction base="ID">
+                    <pattern value="[a-z]\d{1,4}"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="monthly" use="optional" default="yes">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="yes"/>
+                    <enumeration value="no"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <element name="chars" type="tns:Chars" abstract="true"/>
+    <element name="newspaper-chars" type="tns:Newspaper-chars" substitutionGroup="tns:chars"/>
+    <element name="magazine-chars" type="tns:Magazine-chars" substitutionGroup="tns:chars"/>
+    <element name="booklet-chars" type="tns:Booklet-chars" substitutionGroup="tns:chars"/>
+    <complexType name="Chars">
+        <sequence>
+            <element name="color" type="boolean"/>
+            <element name="size" type="int"/>
+        </sequence>
+    </complexType>
+    <complexType name="Newspaper-chars">
+        <complexContent>
+            <extension base="tns:Chars">
+                <attribute name="glossy" fixed="no" use="required"/>
+                <attribute name="index" >
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="\d{1,7}"/>
+                    </restriction>
+                </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="Magazine-chars">
+        <complexContent>
+            <extension base="tns:Chars">
+                <attribute name="glossy" fixed="yes" use="required"/>
+                <attribute name="index" use="required">
+                    <simpleType>
+                        <restriction base="string">
+                            <pattern value="\d{1,7}"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="Booklet-chars">
+        <complexContent>
+            <extension base="tns:Chars">
+                <attribute name="glossy" fixed="yes" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

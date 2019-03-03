@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      version="2.0">
+<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<head>
+    <![CDATA[
+    <meta charset="utf-8">
+    <meta nameNews="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  ]]>
+    <title>
+        ${sessionScope.title}
+    </title>
+</head>
+<body>
+<div class="container col-xs-12" style="background-color:#e6f7d9;height: 800px;margin-top: -20px">
+    <fieldset id="parsers" class="container">
+        <h2>Parse xml file with different parsers</h2>
+        <p>Select file and type of parser :</p>
+        <form id="upload-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <table>
+                        <tr>
+                            <th><label for="uFile">File for parsing:</label></th>
+                            <td><input id="uFile" name="xmlFile" type="file">
+                                <jsp:text/>
+                            </input></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <input id="upload" type="button" class="btn btn-primary col-xs-3" value="Upload"/>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal" action="${pageContext.request.contextPath}/frontController?command=results"
+              method="post">
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <label for="parser">Parser</label>
+                    <select class="form-control" id="parser" name="parserType">
+                        <option>SAX</option>
+                        <option>STAX</option>
+                        <option>DOM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <input type="submit" class="btn btn-primary col-xs-3" value="Parse File"/>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>
+<script>
+    upload.onclick = function() {
+        var data = new FormData($('#upload-form')[0]);
+        var contextUrl = '${pageContext.request.contextPath}';
+        $.ajax({
+            type: 'POST',
+            data: data,
+            url: contextUrl + '/upload',
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    }
+</script>
+</body>
+</html>
+
